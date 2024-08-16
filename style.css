@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+.container{
+    position: relative;
+    background: #ddd;
+    min-height: 100vh;
+}
+.container h1{
+    font-size: 40px;
+    font-weight: normal;
+    padding: 15px;
+    color: #333;
+    text-align: center;
+    text-transform: capitalize;
+}
+.container .image-container{
+display: flex;
+flex-wrap: wrap;
+gap:15px;
+justify-content: center;
+padding: 10px;
+
+}
+
+.container .image-container .image{
+    height: 250px;
+    width: 350px;
+    border: 10px solid #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.container .image-container .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: .2s linear;
+}
+.container .image-container .image:hover img{
+    transform: scale(1.1);
+}
+.container .popup-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.9);
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Initially hidden */
+    visibility: hidden; /* Initially hidden */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+}
+
+.container .popup-image.show {
+    opacity: 1; /* Show the popup */
+    visibility: visible; /* Make it visible */
+}
+
+.container .popup-image span {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 60px;
+    font-weight: bolder;
+    color: #fff;
+    cursor: pointer;
+    z-index: 101;
+}
+
+.container .popup-image img {
+    border: 5px solid #fff;
+    border-radius: 5px;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+@media (max-width:768px) {
+    .container .popup-image img{
+        width:95%;
+    }
+}
+
+.con{
+    width: 259px;
+    overflow: hidden;
+    display: inline-flex;
+}
+.con .text{
+    position: relative;
+    color: #d7b21e;
+    font-size: 30px;
+    font-weight: 600;
+}
+.text.sec-text:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #ddd;
+    border-left: 2px solid blanchedalmond;
+    animation: animate 4s steps(12) infinite;
+}
+@keyframes animate{
+    40%, 60%{
+        left: calc(100% + 4px);
+    }
+    100%{
+        left: 0%;
+    }
+}

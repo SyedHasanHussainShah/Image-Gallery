@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class = "container">
+       <div class = "con"><h1><span class="text sec-text">Image Gallery</span></h1></div>
+     <div class = "image-container">
+        <div class ="image"><img src = "img1.png"></div>
+        <div class ="image"><img src = "img2.png"></div>
+        <div class ="image"><img src = "img3.png"></div>
+        <div class ="image"><img src = "img4.png"></div>
+        <div class ="image"><img src = "img5.png"></div>
+     </div>
+     <div class = "popup-image">
+    <span>&times;</span>
+    <img src = "img1.png">
+     </div>
+    </div>
+
+
+    <script>
+      document.querySelectorAll('.image-container img').forEach(image => {
+    image.onclick = () => {
+        const popup = document.querySelector('.popup-image');
+        popup.classList.add('show'); // Add class to show popup
+        popup.querySelector('img').src = image.getAttribute('src');
+    }
+});
+
+document.querySelector('.popup-image span').onclick = () => {
+    document.querySelector('.popup-image').classList.remove('show'); // Remove class to hide popup
+}
+
+
+    </script>
+</body>
+</html>
